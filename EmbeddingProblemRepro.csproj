@@ -1,0 +1,73 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0-windows7.0</TargetFramework>
+    <RootNamespace>EmbeddingProblemRepro</RootNamespace>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+	<GenerateAssemblyVersionAttribute>true</GenerateAssemblyVersionAttribute>
+    <GenerateAssemblyFileVersionAttribute>true</GenerateAssemblyFileVersionAttribute>
+    <AssemblyName>EmbeddingProblemRepro</AssemblyName>
+    <TypeScriptToolsVersion>4.4</TypeScriptToolsVersion>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <LangVersion>7.2</LangVersion>
+    <UseRazorBuildServer>false</UseRazorBuildServer>
+    <OutputType>Library</OutputType>
+    <SignAssembly>False</SignAssembly>
+    <AssemblyOriginatorKeyFile>listlabel.snk</AssemblyOriginatorKeyFile>
+    <DelaySign>false</DelaySign>
+	<Version>29.0.0.0</Version>
+    <FileVersion>29.0.0.0</FileVersion>
+  </PropertyGroup>
+  
+  <PropertyGroup>
+    <DisableImplicitNamespaceImports>true</DisableImplicitNamespaceImports>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>TRACE;DEBUG;NETCORE_BUILD;ADHOC_DESIGNER;NET_BUILD</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DefineConstants>TRACE;NETCORE_BUILD;ADHOC_DESIGNER;NET_BUILD</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Content\**" />
+    <Compile Remove="Controllers\**" />
+    <Compile Remove="Infrastructure\**" />
+    <Compile Remove="ViewModels\**" />
+    <Content Remove="Content\**" />
+    <Content Remove="Controllers\**" />
+    <Content Remove="Infrastructure\**" />
+    <Content Remove="ViewModels\**" />
+    <EmbeddedResource Remove="Content\**" />
+    <EmbeddedResource Remove="Controllers\**" />
+    <EmbeddedResource Remove="Infrastructure\**" />
+    <EmbeddedResource Remove="ViewModels\**" />
+    <None Remove="Content\**" />
+    <None Remove="Controllers\**" />
+    <None Remove="Infrastructure\**" />
+    <None Remove="ViewModels\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Views\HtmlHelperExtensions.cs" />
+  </ItemGroup>
+
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <TypeScriptTarget>ES5</TypeScriptTarget>
+    <TypeScriptJSXEmit>None</TypeScriptJSXEmit>
+    <TypeScriptModuleKind>None</TypeScriptModuleKind>
+    <NoneOnSaveEnabled>True</NoneOnSaveEnabled>
+    <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
+    <TypeScriptRemoveComments>False</TypeScriptRemoveComments>
+    <TypeScriptOutFile />
+    <TypeScriptOutDir></TypeScriptOutDir>
+    <TypeScriptGeneratesDeclarations>False</TypeScriptGeneratesDeclarations>
+    <TypeScriptNoEmitOnError>True</TypeScriptNoEmitOnError>
+    <TypeScriptSourceMap>True</TypeScriptSourceMap>
+    <TypeScriptMapRoot />
+    <TypeScriptSourceRoot />
+  </PropertyGroup>
+
+</Project>
